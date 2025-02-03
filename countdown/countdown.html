@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophie Aleo Bewerbung</title>
+    <link href="countdown.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <p></p>
+            <h1>Meine Bewerbung? Eingereicht. <br>Ihr Interesse? Geweckt. (Hoffentlich &#128584;) </h1>
+            <br>
+            <h2><span>Der Countdown zum Start meines Trainee-Programms <br> bei der Deutschen WertpapierService Bank kann beginnen...</span></h2>
+            <br>
+            <div class="start-time">
+                <div> 
+                    <p id="days">00</p>
+                    <span>T a g e</span>
+                </div>
+                <div> 
+                    <p id="hours">00</p>
+                    <span>S t u n d e n</span>
+                </div>
+                <div> 
+                    <p id="minutes">00</p>
+                    <span>M i n u t e n</span>
+                </div>
+                <div> 
+                    <p id="seconds">00</p>
+                    <span>S e k u n d e n</span>
+                </div>
+            </div>
+            
+        </div>
+      
+    </div>
+<script>
+    var countDownDate = new Date("Apr 01,2025 00:00:00").getTime();
+    var x= setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById("days").innerHTML = days.toString().padStart(2,'0');
+        document.getElementById("hours").innerHTML = hours.toString().padStart(2,'0');
+        document.getElementById("minutes").innerHTML = minutes.toString().padStart(2,'0');
+        document.getElementById("seconds").innerHTML = seconds.toString().padStart(2,'0');
+        
+        if(distance < 0){
+            clearInterval(x);
+            document.getElementById("days").innerHTML = "00";
+            document.getElementById("hours").innerHTML = "00";
+            document.getElementById("minutes").innerHTML = "00";
+            document.getElementById("seconds").innerHTML = "00";
+            
+        }
+    },1000);
+</script>
+</body>
+</html>
